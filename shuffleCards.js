@@ -1,5 +1,4 @@
-
-import {  showElements } from "./showHideElements.js";
+import { showElements } from "./showHideElements.js";
 
 export function shuffleCards(arrCards, userNumberOfCards) {
   const newArr = [];

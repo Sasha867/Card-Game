@@ -64,11 +64,21 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 10px;
+  transform-origin: center right;
+}
+.card.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
 }
 
 .hide {
+  transform-origin: center right;
   background-image: url("./img/foncard.jpg") !important;
 }
+
+.hide.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
 
 .buttonOk {
   font-size: 1.2rem;
@@ -83,7 +93,8 @@ body {
 }
 
 .resButton {
-  font-size: 1.2rem;
+  padding: 5px;
+  font-size: 1rem;
   font-weight: 600;
   text-align: center;
   height: 40px;
@@ -120,6 +131,7 @@ body {
 .userSelected {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 10px;
   font-weight: 700;
   font-size: calc(10px + 20 * (100vw / 2000));

@@ -1,4 +1,9 @@
-import { userSelected } from "./onClickFunctions.js";
+import {
+  resetGame,
+  userSeleсted,
+  removePanelControl,
+} from "./onClickFunctions.js";
+
 export const arrCards = [
   "img/1.jpg",
   "img/2.jpg",
@@ -9,7 +14,7 @@ export const arrCards = [
   "img/7.jpg",
   "img/8.jpg",
 ];
-
+// const resButton = document.createElement("button");
 export const infoDiv = document.getElementById("userValue");
 export const gameZone = document.getElementById("fieldOfPlay");
 export const buttonOk = document.getElementById("buttonOk");
@@ -20,6 +25,6 @@ export const playProcess = {
   openedCards: 0,
 };
 
-buttonOk.addEventListener("click", userSelected);
-
-
+buttonOk.addEventListener("click", userSeleсted);
+buttonOk.addEventListener("click", removePanelControl);
+resButton.addEventListener("click", resetGame);

@@ -1,4 +1,4 @@
-import { playProcess } from "./index.js";
+import {  playProcess } from "./index.js";
 import { showCards } from "./showHideElements.js";
 
 export const hangEventCard = function hangEventCard(card) {
@@ -20,3 +20,5 @@ export function closeValueCard() {
     playProcess.currentTarget = [];
   });
 }
+
+

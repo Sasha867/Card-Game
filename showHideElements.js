@@ -1,9 +1,9 @@
-import { gameZone, input, playProcess } from "./index.js";
+import { gameZone, playProcess } from "./index.js";
 import { closeValueCard, hangEventCard, removeMatch } from "./utils.js";
 
 export function changeGameFon() {
-  gameZone.classList.add("userGame");
-  input.value = "";
+  gameZone.classList.toggle("userGame");
+  // input.value = "";
 }
 
 export function showElements(newArr) {
@@ -19,8 +19,8 @@ export function showElements(newArr) {
 
 export function showCards({ target }) {
   target.classList.toggle("hide");
-  if(playProcess.currentTarget[0] === )
-  playProcess.currentTarget.push(target);
+  if (playProcess.currentTarget[0] !== target)
+    playProcess.currentTarget.push(target);
   if (playProcess.currentTarget.length === 2) {
     if (
       playProcess.currentTarget[0].style.background ===
