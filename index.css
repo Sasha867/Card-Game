@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(206, 213, 147);
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.tittle {
+  background-color: rgb(206, 213, 147);
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px 15px;
+  font-size: calc(24px + 30 * (100vw / 1280));
+  text-shadow: 2px 2px 2px rgb(191, 235, 235), 4px 4px 2px rgb(191, 235, 235);
+}
+
+.gameZone {
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  width: 70%;
+  height: 75vh;
+  background-color: rgb(191, 235, 235);
+  background: url("./img/background.jpg") top center no-repeat;
+  background-size: 100% 100%;
+}
+
+.userGame {
+  flex-wrap: wrap;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  max-width: 80%;
+  max-height: 75vh;
+  background-color: rgb(191, 235, 235);
+  background: url("./img/background2.jpg") top center no-repeat;
+  background-size: 100% 100%;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 20px;
+  width: 100px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.hide {
+  background-image: url("./img/foncard.jpg") !important;
+}
+
+.buttonOk {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 5px;
+  margin-left: 15px;
+  border: 2px solid rgb(19, 20, 20);
+  box-shadow: 10px 4px 8px rgb(0 0 0 / 60%);
+}
+
+.resButton {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 5px;
+  margin-left: 15px;
+  border: 2px solid rgb(19, 20, 20);
+  box-shadow: 10px 4px 8px rgb(0 0 0 / 60%);
+}
+
+.containerControl {
+  display: flex;
+  justify-content: center;
+}
+
+.input {
+  font-size: 20px;
+  font-weight: 500;
+  width: 35vh;
+  text-align: center;
+  height: 40px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 2px solid rgb(19, 20, 20);
+  box-shadow: 10px 4px 8px rgb(0 0 0 / 60%);
+}
+::-webkit-input-placeholder {
+  /* font-size: 1.1rem; */
+  font-size: calc(8px + 10 * (100vw / 2000));
+  font-family: Tahoma;
+  color: rgb(150, 139, 139);
+}
+
+.userSelected {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: calc(10px + 20 * (100vw / 2000));
+  text-shadow: 2px 2px 2px rgb(191, 235, 235), 4px 4px 2px rgb(191, 235, 235);
+}
