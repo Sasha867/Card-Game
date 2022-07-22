@@ -19,6 +19,7 @@ export function showElements(newArr) {
 
 export function showCards({ target }) {
   target.classList.toggle("hide");
+  if(playProcess.currentTarget[0] === )
   playProcess.currentTarget.push(target);
   if (playProcess.currentTarget.length === 2) {
     if (
