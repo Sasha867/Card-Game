@@ -1,34 +1,27 @@
-import { createElement } from "./createElement.js";
 import {
-  arrCards,
-  gameZone,
-  infoDiv,
-  input,
-  playProcess,
-  resButton,
-} from "./index.js";
+  creatButtonReset,
+  createChoiceMessage,
+  createElement,
+} from "./createElement.js";
+import { arrCards, gameZone, infoDiv, input, playProcess } from "./index.js";
 import { changeGameFon } from "./showHideElements.js";
 import { shuffleCards } from "./shuffleCards.js";
 
 export function userSeleсted() {
   const userNumberOfCards = input.value;
-  resButton.textContent = "reset";
-  resButton.classList.add("resButton");
   if ((userNumberOfCards > 1) & (userNumberOfCards < 33)) {
-    const p = document.createElement("p");
-    p.classList.add("userMode");
-    p.textContent = `You have selected ${input.value} decks mode`;
-    infoDiv.append(p, resButton);
+    createChoiceMessage(userNumberOfCards);
     console.log(userNumberOfCards);
+    creatButtonReset();
     changeGameFon();
     shuffleCards(arrCards, userNumberOfCards);
   } else {
-    infoDiv.innerHTML = `Enter correct value `;
+    createChoiceMessage(userNumberOfCards);
   }
 }
 
 export function removePanelControl() {
-  document.querySelector(".buttonOk").remove();
+  document.querySelector(".buttonStart").remove();
   document.querySelector(".input").remove();
 }
 
