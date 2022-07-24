@@ -14,17 +14,17 @@ export const arrCards = [
   "img/7.jpg",
   "img/8.jpg",
 ];
-// const resButton = document.createElement("button");
+
+// export const scene = document.getElementsByClassName("scene")[0];
+export const card = document.createElement("div");
 export const infoDiv = document.getElementById("userValue");
 export const gameZone = document.getElementById("fieldOfPlay");
-export const buttonOk = document.getElementById("buttonOk");
+export const buttonStart = document.getElementById("buttonStart");
 export const input = document.getElementById("input");
-export const resButton = document.createElement("button");
 export const playProcess = {
   currentTarget: [],
   openedCards: 0,
 };
 
-buttonOk.addEventListener("click", userSeleсted);
-buttonOk.addEventListener("click", removePanelControl);
-resButton.addEventListener("click", resetGame);
+buttonStart.addEventListener("click", userSeleсted);
+buttonStart.addEventListener("click", removePanelControl);
