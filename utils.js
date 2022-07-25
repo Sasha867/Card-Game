@@ -1,30 +1,24 @@
 import { createPopup } from "./createElement.js";
-import {  input, playProcess } from "./index.js";
-import { showCards } from "./showHideElements.js";
-
-
+import { playProcess } from "./index.js";
 
 export function removeMatch() {
   playProcess.openedCards++;
-  const userNumberOfCards = +input.value;
-  playProcess.currentTarget.forEach((el) => {
-    el.remove();
-    playProcess.currentTarget = [];
-
-    console.log(playProcess.openedCards);
-  });
-  console.log(userNumberOfCards);
-  if (playProcess.openedCards === userNumberOfCards){
-    createPopup()
+  setTimeout(() => {
+    playProcess.currentTarget.forEach((el) => {
+      el.remove();
+      playProcess.currentTarget = [];
+    });
+  }, 700);
+  if (playProcess.openedCards === playProcess.inputValue) {
+    createPopup();
   }
-
 }
 
 export function closeValueCard() {
-  playProcess.currentTarget.forEach((el) => {
-    el.classList.toggle("card_hide");
-    playProcess.currentTarget = [];
-  });
+  setTimeout(() => {
+    playProcess.currentTarget.forEach((el) => {
+      el.classList.add("card_hide");
+      playProcess.currentTarget = [];
+    });
+  }, 700);
 }
-
-

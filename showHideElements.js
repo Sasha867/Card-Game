@@ -1,4 +1,4 @@
-import { gameZone, input, playProcess } from "./index.js";
+import { gameZone, playProcess } from "./index.js";
 import { hangEventCard } from "./onClickFunctions.js";
 import { closeValueCard, removeMatch } from "./utils.js";
 
@@ -21,9 +21,14 @@ export function showElements(newArr) {
 }
 
 export function showCards({ target }) {
-  target.classList.toggle("card_hide");
-  if (playProcess.currentTarget[0] !== target)
+  if (playProcess.currentTarget[0] !== target) {
     playProcess.currentTarget.push(target);
+    target.classList.toggle("card_hide");
+    console.log(playProcess.currentTarget);
+  } else {
+    playProcess.currentTarget.shiffle();
+    target.classList.add("card_hide");
+  }
   if (playProcess.currentTarget.length === 2) {
     if (
       playProcess.currentTarget[0].style.background ===

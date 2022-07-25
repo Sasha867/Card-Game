@@ -1,8 +1,8 @@
-import { createButtonStart, createInput } from "./createElement.js";
 
-export function NewGame() {
+import { start } from "./index.js";
+
+export function newGame() {
   document.querySelector(".userMode").remove();
   document.querySelector(".resButton").remove();
-  createInput();
-  createButtonStart();
+  start();
 }

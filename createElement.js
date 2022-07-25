@@ -1,15 +1,10 @@
-import { input, infoDiv, container } from "./index.js";
+import { infoDiv, container } from "./index.js";
 import {
   removePanelControl,
   resetGame,
   userSeleсted,
 } from "./onClickFunctions.js";
-import { NewGame } from "./startGame.js";
-
-// export function createElement() {
-//   buttonStart.classList.add("buttonOk"); //!!!
-//   input.classList.add("input");
-// }
+import { newGame } from "./startGame.js";
 
 export function createInput() {
   const input = document.createElement("input");
@@ -17,6 +12,9 @@ export function createInput() {
   input.type = "number";
   input.classList.add("input");
   container.append(input);
+  const userNumberOfCards = +input.value; //
+  console.log(userNumberOfCards); //
+  return userNumberOfCards; //
 }
 
 export function createButtonStart() {
@@ -34,7 +32,7 @@ export function creatButtonReset() {
   resButton.classList.add("resButton");
   infoDiv.append(resButton);
   resButton.addEventListener("click", resetGame);
-  resButton.addEventListener("click", NewGame);
+  resButton.addEventListener("click", newGame);
 }
 
 export function createChoiceMessage(userNumberOfCards) {
@@ -46,6 +44,9 @@ export function createChoiceMessage(userNumberOfCards) {
   } else {
     p.textContent = `Enter correct value`;
     infoDiv.append(p);
+    createInput();
+    console.log(userNumberOfCards);
+    createButtonStart();
   }
 }
 
@@ -66,8 +67,10 @@ export function createPopup() {
   buttonNewGame.textContent = "New game";
   buttonNewGame.classList.add("buttonNewGame");
   popupInfo.append(buttonNewGame);
-  // buttonNewGame.addEventListener("click", userSeleсted)
   buttonNewGame.addEventListener("click", () => {
     document.querySelector(".containerPopup").remove();
+
+    resetGame();
+    newGame();
   });
 }

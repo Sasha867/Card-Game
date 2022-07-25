@@ -6,22 +6,24 @@ import {
 import { arrCards, gameZone, input, playProcess } from "./index.js";
 import { changeGameFon, showCards } from "./showHideElements.js";
 import { shuffleCards } from "./shuffleCards.js";
-import { NewGame } from "./startGame.js";
+
 
 export const hangEventCard = function hangEventCard(card) {
   card.addEventListener("click", showCards);
 };
 
 export function userSeleсted() {
-  const userNumberOfCards = input.value;
-  if ((userNumberOfCards > 1) & (userNumberOfCards < 33)) {
-    createChoiceMessage(userNumberOfCards);
-    console.log(userNumberOfCards);
+  const input = document.getElementsByClassName("input")[0];
+  playProcess.inputValue = +input.value;
+  console.log(playProcess.inputValue);
+  if ((playProcess.inputValue > 1) & (playProcess.inputValue < 33)) {
+    createChoiceMessage(playProcess.inputValue);
+    console.log(playProcess.inputValue);
     creatButtonReset();
     changeGameFon();
-    shuffleCards(arrCards, userNumberOfCards);
+    shuffleCards(arrCards, playProcess.inputValue);
   } else {
-    createChoiceMessage(userNumberOfCards);
+    createChoiceMessage(playProcess.inputValue);
   }
 }
 
@@ -30,14 +32,11 @@ export function removePanelControl() {
   document.querySelector(".input").remove();
 }
 
-
-
 export function resetGame() {
   gameZone.classList.toggle("userGame");
-  input.value = "";
+  input.value = 0;
   gameZone.textContent = "";
   playProcess.openedCards = 0;
   console.log(playProcess.openedCards);
-  NewGame();
   // createElement();
 }

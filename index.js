@@ -1,4 +1,4 @@
-import { createButtonStart } from "./createElement.js";
+import { createButtonStart, createInput } from "./createElement.js";
 
 export const arrCards = [
   "img/1.jpg",
@@ -23,11 +23,18 @@ export const arrCards = [
 export const card = document.createElement("div");
 export const infoDiv = document.getElementById("userValue");
 export const gameZone = document.getElementById("fieldOfPlay");
-export const input = document.getElementsByClassName("input")[0];
 export const container = document.getElementsByClassName("containerControl")[0];
 export const playProcess = {
   currentTarget: [],
   openedCards: 0,
+  inputValue: 0,
 };
-
-createButtonStart();
+export function start(){
+  createInput();
+  createButtonStart();
+  
+}
+start();
+export const input = document.getElementsByClassName("input")[0];
+export const buttonStart = document.getElementsByClassName("buttonStart")[0];
+console.log(input);
