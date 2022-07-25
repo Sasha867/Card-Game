@@ -14,19 +14,15 @@ export function showElements(newArr) {
     card.style.background = ` url(${el}) no-repeat center/cover`;
     gameZone.append(card);
     hangEventCard(card);
-    // card.addEventListener("click", function () {
-    //   card.classList.toggle("is-flipped");
-    // });
   });
 }
 
 export function showCards({ target }) {
   if (playProcess.currentTarget[0] !== target) {
-    playProcess.currentTarget.push(target);
     target.classList.toggle("card_hide");
-    console.log(playProcess.currentTarget);
+    playProcess.currentTarget.push(target);
   } else {
-    playProcess.currentTarget.shiffle();
+    playProcess.currentTarget.shift();
     target.classList.add("card_hide");
   }
   if (playProcess.currentTarget.length === 2) {

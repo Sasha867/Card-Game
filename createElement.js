@@ -12,9 +12,6 @@ export function createInput() {
   input.type = "number";
   input.classList.add("input");
   container.append(input);
-  const userNumberOfCards = +input.value; //
-  console.log(userNumberOfCards); //
-  return userNumberOfCards; //
 }
 
 export function createButtonStart() {
@@ -56,12 +53,7 @@ export function createPopup() {
   const h1 = document.getElementsByClassName("tittle")[0];
   h1.before(popup);
   const popupInfo = document.createElement("div");
-  const p = document.createElement("p");
-  p.textContent = `Congratulations you win, 
-  click "New game" !!!`;
-  p.classList.add("popupText");
   popupInfo.classList.add("popupInfo");
-  popupInfo.append(p);
   popup.append(popupInfo);
   const buttonNewGame = document.createElement("button");
   buttonNewGame.textContent = "New game";
@@ -69,7 +61,6 @@ export function createPopup() {
   popupInfo.append(buttonNewGame);
   buttonNewGame.addEventListener("click", () => {
     document.querySelector(".containerPopup").remove();
-
     resetGame();
     newGame();
   });

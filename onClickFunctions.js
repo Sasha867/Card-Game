@@ -1,12 +1,7 @@
-import {
-  creatButtonReset,
-  createChoiceMessage,
-  // createElement,
-} from "./createElement.js";
+import { creatButtonReset, createChoiceMessage } from "./createElement.js";
 import { arrCards, gameZone, input, playProcess } from "./index.js";
 import { changeGameFon, showCards } from "./showHideElements.js";
 import { shuffleCards } from "./shuffleCards.js";
-
 
 export const hangEventCard = function hangEventCard(card) {
   card.addEventListener("click", showCards);

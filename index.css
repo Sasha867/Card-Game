@@ -28,6 +28,7 @@ body {
 }
 
 .gameZone {
+  border: 3px solid #33d9de;
   border-radius: 15px;
   margin-bottom: 40px;
   min-width: 60%;
@@ -38,7 +39,6 @@ body {
 }
 
 .userGame {
-  /* perspective: 600px; */
   flex-wrap: wrap;
   padding: 20px;
   display: flex;
@@ -53,23 +53,12 @@ body {
   background-size: 100% 100%;
 }
 
-/* .scene {
-  width: 100px;
-  height: 150px;
-} */
-
 .card {
   display: flex;
   flex-wrap: wrap;
   margin: 10px 10px;
-  /* position: relative; */
-  /* width: 100%; */
-  /* height: 100%; */
+  border: 3px solid #33d9de;
   cursor: pointer;
-  /* transition: transform 1s; */
-  /* transform-style: preserve-3d; */
-  /* transform-origin: center right; */
-  /* backface-visibility: visible; */
   width: 10%;
   height: 30%;
   background-repeat: no-repeat;
@@ -78,12 +67,7 @@ body {
   box-shadow: 15px 4px 8px rgb(0 0 0 / 70%);
 }
 
-/* .card.is-flipped {
-  transform: rotateY(180deg);
-} */
-
 .card_hide {
-  /* transform: rotateY(180deg); */
   background-image: url("./img/foncard.jpg") !important;
 }
 
@@ -92,53 +76,44 @@ body {
   font-weight: 800;
   font-family: "Noto Sans", sans-serif;
   text-decoration: none;
-  color: black;
   border-radius: 5px;
-  position: relative;
   padding: 14px 30px;
+  border: 2px solid rgb(255, 255, 255);
   border-image-slice: 1;
   margin: 10px 20px;
   text-transform: uppercase;
-  overflow: hidden;
-  letter-spacing: 1px;
-  transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
   box-shadow: 10px 4px 8px rgb(0 0 0 / 60%);
   cursor: pointer;
-}
-
-.buttonStart:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 0;
-  width: 100%;
-  z-index: -1;
+  text-decoration: none;
+  display: inline-block;
+  background-image: linear-gradient(
+    45deg,
+    #6ab1d7 0%,
+    #33d9de 50%,
+    #002878 100%
+  );
+  background-position: 100% 0;
+  background-size: 200% 200%;
   color: white;
-  background: linear-gradient(180deg, #00fbff, #a600ed, #ff09ef, #d1d500);
-  transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: 0.5s;
 }
 
 .buttonStart:hover {
-  background: rgba(255, 255, 255, 0);
-}
-
-.buttonStart:hover:before {
-  bottom: 0%;
-  top: auto;
-  height: 100%;
+  box-shadow: 0 0 0 0 rgba(0, 40, 120, 0);
+  background-position: 0 0;
 }
 
 .resButton {
-  padding: 5px;
-  font-size: 1rem;
-  font-weight: 600;
+  background-color: #e15555;
+  color: rgb(0, 0, 0);
+  padding: 5px 10px;
+  font-size: calc(10px + 20 * (100vw / 2000));
   text-align: center;
-  height: 40px;
+  height: 50px;
   min-width: 40px;
   border-radius: 5px;
   margin-left: 15px;
-  border: 2px solid rgb(19, 20, 20);
+  border: 2px solid rgb(0, 0, 0);
   box-shadow: 10px 4px 8px rgb(0 0 0 / 60%);
   cursor: pointer;
 }
@@ -151,22 +126,41 @@ body {
 }
 
 .input {
-  /* letter-spacing: 1px; */
   display: flex;
   font-size: 20px;
   font-weight: 500;
   width: 35vh;
   text-align: center;
   height: 50px;
-  margin-bottom: 10px 20px;
   border-radius: 5px;
-  border: 2px solid rgb(19, 20, 20);
+  border: 2px solid rgb(255, 255, 255);
   box-shadow: 10px 4px 8px rgb(0 0 0 / 60%);
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 10px;
+  margin: 10px 20px;
+  background-image: linear-gradient(
+    45deg,
+    #6ab1d7 0%,
+    #33d9de 50%,
+    #002878 100%
+  );
+  background-position: 100% 0;
+  background-size: 200% 200%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  color: white;
+  transition: 0.5s;
 }
 ::-webkit-input-placeholder {
   font-size: calc(8px + 10 * (100vw / 2000));
   font-family: Tahoma;
-  color: rgb(150, 139, 139);
+  color: rgb(255, 255, 255);
+}
+
+.input:hover {
+  box-shadow: 0 0 0 0 rgba(0, 40, 120, 0);
+  background-position: 0 0;
 }
 
 .userSelected {
@@ -197,10 +191,12 @@ body {
   width: 60%;
   border-radius: 10px;
   font-size: calc(25px + 20 * (100vw / 2000));
-  background-color: rgb(255, 255, 255);
+  background: url("./img/popupFon.jpg") no-repeat;
+  background-size: 100% 100%;
   height: 300px;
   box-shadow: 10px 4px 8px rgb(0 0 0 / 70%);
   padding: 10px;
+  border: 3px solid #33d9de;
 }
 
 .buttonNewGame {
@@ -214,8 +210,38 @@ body {
   background-color: rgb(201, 233, 234);
   cursor: pointer;
   box-shadow: 10px 4px 8px rgb(0 0 0 / 70%);
+  text-decoration: none;
+  background-image: linear-gradient(
+    45deg,
+    #6ab1d7 0%,
+    #33d9de 50%,
+    #002878 100%
+  );
+  background-position: 100% 0;
+  background-size: 200% 200%;
+  color: white;
+  box-shadow: 0 16px 32px 0 rgba(0, 40, 120, 0.35);
+  transition: 0.5s;
+  border: 3px solid #ffffff;
+}
+.buttonNewGame:hover {
+  box-shadow: 0 0 0 0 rgba(0, 40, 120, 0);
+  background-position: 0 0;
 }
 
-.popupText {
-  display: flex;
+@media (max-width:900px){
+  .gameZone{
+    width: 50%;
+    height: 50%;
+  }
+  .wrapper{
+   min-height: 70%;
+  }
+}
+
+@media (max-width:800px){
+  .gameZone{
+    width: 40%;
+    height: 40%;
+  }
 }
