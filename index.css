@@ -5,22 +5,21 @@
 }
 
 body {
-  background-color: rgb(206, 213, 147);
+  background-image: url("./img/fon2.jpg");
   font-family: "Noto Sans", sans-serif;
   font-weight: 500;
   margin: 0;
   padding: 0;
-  height: 100%;
+  height: 100vh;
 }
 
 .wrapper {
   display: flex;
   justify-content: space-evenly;
-  height: 100vh;
+  height: 100%;
 }
 
 .tittle {
-  background-color: rgb(206, 213, 147);
   display: flex;
   justify-content: center;
   padding: 10px 0px 15px;
@@ -29,14 +28,12 @@ body {
 }
 
 .gameZone {
-  display: flex;
-  justify-content: center;
   border-radius: 15px;
   margin-bottom: 40px;
-  min-width: 50%;
-  height: 50%;
+  min-width: 60%;
+  height: 60vh;
   background-color: rgb(191, 235, 235);
-  background: url("./img/background.jpg") top center no-repeat;
+  background: url("./img/zastavka.jpg") no-repeat;
   background-size: 100% 100%;
 }
 
@@ -48,9 +45,9 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 15px;
-  margin-bottom: 40px;
+  margin: 0px 20px 40px 20px;
   min-width: 80%;
-  height: 75vh;
+  height: 75%;
   background-color: rgb(191, 235, 235);
   background: url("./img/background2.jpg") top center no-repeat;
   background-size: 100% 100%;
@@ -64,7 +61,7 @@ body {
 .card {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 20px;
+  margin: 10px 10px;
   /* position: relative; */
   /* width: 100%; */
   /* height: 100%; */
@@ -73,11 +70,12 @@ body {
   /* transform-style: preserve-3d; */
   /* transform-origin: center right; */
   /* backface-visibility: visible; */
-  width: 150px;
-  height: 200px;
+  width: 10%;
+  height: 30%;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 10px;
+  box-shadow: 15px 4px 8px rgb(0 0 0 / 70%);
 }
 
 /* .card.is-flipped {
@@ -90,16 +88,45 @@ body {
 }
 
 .buttonStart {
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-align: center;
-  height: 40px;
-  min-width: 40px;
+  font-size: calc(10px + 20 * (100vw / 2000));
+  font-weight: 800;
+  font-family: "Noto Sans", sans-serif;
+  text-decoration: none;
+  color: black;
   border-radius: 5px;
-  margin-left: 15px;
-  border: 2px solid rgb(19, 20, 20);
+  position: relative;
+  padding: 14px 30px;
+  border-image-slice: 1;
+  margin: 10px 20px;
+  text-transform: uppercase;
+  overflow: hidden;
+  letter-spacing: 1px;
+  transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
   box-shadow: 10px 4px 8px rgb(0 0 0 / 60%);
   cursor: pointer;
+}
+
+.buttonStart:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 0;
+  width: 100%;
+  z-index: -1;
+  color: white;
+  background: linear-gradient(180deg, #00fbff, #a600ed, #ff09ef, #d1d500);
+  transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.buttonStart:hover {
+  background: rgba(255, 255, 255, 0);
+}
+
+.buttonStart:hover:before {
+  bottom: 0%;
+  top: auto;
+  height: 100%;
 }
 
 .resButton {
@@ -119,21 +146,24 @@ body {
 .containerControl {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .input {
+  /* letter-spacing: 1px; */
+  display: flex;
   font-size: 20px;
   font-weight: 500;
   width: 35vh;
   text-align: center;
-  height: 40px;
-  margin-bottom: 20px;
+  height: 50px;
+  margin-bottom: 10px 20px;
   border-radius: 5px;
   border: 2px solid rgb(19, 20, 20);
   box-shadow: 10px 4px 8px rgb(0 0 0 / 60%);
 }
 ::-webkit-input-placeholder {
-  /* font-size: 1.1rem; */
   font-size: calc(8px + 10 * (100vw / 2000));
   font-family: Tahoma;
   color: rgb(150, 139, 139);
@@ -184,4 +214,8 @@ body {
   background-color: rgb(201, 233, 234);
   cursor: pointer;
   box-shadow: 10px 4px 8px rgb(0 0 0 / 70%);
+}
+
+.popupText {
+  display: flex;
 }

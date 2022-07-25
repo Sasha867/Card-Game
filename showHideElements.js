@@ -1,5 +1,6 @@
 import { gameZone, input, playProcess } from "./index.js";
-import { closeValueCard, hangEventCard, removeMatch } from "./utils.js";
+import { hangEventCard } from "./onClickFunctions.js";
+import { closeValueCard, removeMatch } from "./utils.js";
 
 export function changeGameFon() {
   gameZone.classList.add("userGame");

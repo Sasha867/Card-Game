@@ -1,11 +1,16 @@
 import {
   creatButtonReset,
   createChoiceMessage,
-  createElement,
+  // createElement,
 } from "./createElement.js";
-import { arrCards, gameZone, infoDiv, input, playProcess } from "./index.js";
-import { changeGameFon } from "./showHideElements.js";
+import { arrCards, gameZone, input, playProcess } from "./index.js";
+import { changeGameFon, showCards } from "./showHideElements.js";
 import { shuffleCards } from "./shuffleCards.js";
+import { NewGame } from "./startGame.js";
+
+export const hangEventCard = function hangEventCard(card) {
+  card.addEventListener("click", showCards);
+};
 
 export function userSeleсted() {
   const userNumberOfCards = input.value;
@@ -25,11 +30,14 @@ export function removePanelControl() {
   document.querySelector(".input").remove();
 }
 
+
+
 export function resetGame() {
   gameZone.classList.toggle("userGame");
   input.value = "";
   gameZone.textContent = "";
   playProcess.openedCards = 0;
   console.log(playProcess.openedCards);
-  createElement();
+  NewGame();
+  // createElement();
 }

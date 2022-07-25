@@ -2,9 +2,7 @@ import { createPopup } from "./createElement.js";
 import {  input, playProcess } from "./index.js";
 import { showCards } from "./showHideElements.js";
 
-export const hangEventCard = function hangEventCard(card) {
-  card.addEventListener("click", showCards);
-};
+
 
 export function removeMatch() {
   playProcess.openedCards++;
