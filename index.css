@@ -10,12 +10,12 @@ body {
   font-weight: 500;
   margin: 0;
   padding: 0;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .wrapper {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   height: 100%;
 }
 
@@ -39,6 +39,7 @@ body {
 }
 
 .userGame {
+  border: none;
   flex-wrap: wrap;
   padding: 20px;
   display: flex;
@@ -47,9 +48,9 @@ body {
   border-radius: 15px;
   margin: 0px 20px 40px 20px;
   min-width: 80%;
-  height: 75%;
+  min-height: 70%;
   background-color: rgb(191, 235, 235);
-  background: url("./img/background2.jpg") top center no-repeat;
+  background: transparent;
   background-size: 100% 100%;
 }
 
@@ -229,19 +230,17 @@ body {
   background-position: 0 0;
 }
 
-@media (max-width:900px){
-  .gameZone{
+@media (max-width: 900px) {
+  .gameZone {
     width: 50%;
-    height: 50%;
   }
-  .wrapper{
-   min-height: 70%;
+  .wrapper {
+    min-height: 70%;
   }
 }
 
-@media (max-width:800px){
-  .gameZone{
+@media (max-width: 800px) {
+  .gameZone {
     width: 40%;
-    height: 40%;
   }
 }

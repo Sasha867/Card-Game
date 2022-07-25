@@ -9,6 +9,5 @@ export function shuffleCards(arrCards, userNumberOfCards) {
     let temp = tempArr.splice(rand, 1);
     newArr.push(...temp);
   }
-  console.log(newArr);
   showElements(newArr);
 }

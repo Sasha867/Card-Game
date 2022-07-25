@@ -19,7 +19,6 @@ export const arrCards = [
   "img/16.jpg",
 ];
 
-// export const scene = document.getElementsByClassName("scene")[0];
 export const card = document.createElement("div");
 export const infoDiv = document.getElementById("userValue");
 export const gameZone = document.getElementById("fieldOfPlay");
@@ -29,12 +28,10 @@ export const playProcess = {
   openedCards: 0,
   inputValue: 0,
 };
-export function start(){
+export function start() {
   createInput();
   createButtonStart();
-  
 }
 start();
 export const input = document.getElementsByClassName("input")[0];
 export const buttonStart = document.getElementsByClassName("buttonStart")[0];
-console.log(input);

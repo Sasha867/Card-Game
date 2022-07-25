@@ -1,9 +1,5 @@
 import { infoDiv, container } from "./index.js";
-import {
-  removePanelControl,
-  resetGame,
-  userSeleсted,
-} from "./onClickFunctions.js";
+import { removePanelControl, userSeleсted } from "./onClickFunctions.js";
 import { newGame } from "./startGame.js";
 
 export function createInput() {
@@ -15,7 +11,7 @@ export function createInput() {
 }
 
 export function createButtonStart() {
-  const buttonStart = document.createElement("button");
+   const buttonStart = document.createElement("button");
   buttonStart.classList.add("buttonStart");
   buttonStart.textContent = "Start Game";
   container.append(buttonStart);
@@ -28,7 +24,6 @@ export function creatButtonReset() {
   resButton.textContent = "reset";
   resButton.classList.add("resButton");
   infoDiv.append(resButton);
-  resButton.addEventListener("click", resetGame);
   resButton.addEventListener("click", newGame);
 }
 
@@ -61,7 +56,6 @@ export function createPopup() {
   popupInfo.append(buttonNewGame);
   buttonNewGame.addEventListener("click", () => {
     document.querySelector(".containerPopup").remove();
-    resetGame();
     newGame();
   });
 }

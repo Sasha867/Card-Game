@@ -33,5 +33,4 @@ export function resetGame() {
   gameZone.textContent = "";
   playProcess.openedCards = 0;
   console.log(playProcess.openedCards);
-  // createElement();
 }
